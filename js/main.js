@@ -1,13 +1,15 @@
 (function() {
   'use strict';
 
+  var warikan = document.getElementById('warikan');
+  var kyuyo = document.getElementById('kyuyo');
   var price = document.getElementById('price');
   var num = document.getElementById('num');
   var unit = document.getElementById('unit');
   var btn = document.getElementById('btn');
   var result = document.getElementById('result');
   var reset = document.getElementById('reset');
-
+  
   function checkInput() {
     // /^[1-9][0-9]*$/
     if (

@@ -5,11 +5,25 @@
   <title>割り勘電卓</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+<script type="text/javascript">
+  function selectWarikan(){
+    document.getElementById('price').placeholder = "金額";
+    document.getElementById('num').placeholder = "人数";
+    document.getElementById('unit').style.visibility = "visible";
+  }
+</script>
+<script type="text/javascript">
+  function selectKyuyo(){
+    document.getElementById('price').placeholder = "時給";
+    document.getElementById('num').placeholder = "勤務時間";
+    document.getElementById('unit').style.visibility = "hidden";
+  }
+</script>
 <body>
   <div class="container">
     <div class="select-area">
-      <input type="radio" id="dentaku" value="warikan">割り勘
-      <input type="radio" id="dentaku" value="kyuyo">給与計算
+      <input type="radio" id="warikan" name="dentaku" value="warikan" onclick="selectWarikan()">割り勘
+      <input type="radio" id="kyuyo" name="dentaku" value="kyuyo" onclick="selectKyuyo()">給与計算
     </div>
     <div class="input-area">
       <input type="text" id="price" placeholder="金額">
