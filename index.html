@@ -7,41 +7,37 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="select-area">
-      <input type="radio" id="warikan" name="dentaku" value="warikan" onclick="selectWarikan()">割り勘
-      <input type="radio" id="kyuyo" name="dentaku" value="kyuyo" onclick="selectKyuyo()">給与計算
-    </div>
-    <div class="input-area">
-      <input type="text" id="value1">
-      <input type="text" id="kigou">
-      <input type="text" id="value2">
-      <br>
-      <input type="radio" name="enzan" id="plus">+
-      <input type="radio" name="enzan" id="minus">-
-      <input type="radio" name="enzan" id="multiply">×
-      <input type="radio" name="enzan" id="divide">÷
-      <input type="radio" name="enzan" id="amari">あまり
-      <input type="radio" name="shosu" id="shosu">.
-      <div id="btn" class="disabled">計算</div>
-    </div>
-    <div class="result-area">
-      <p id="result">ここに結果を表示します</p>
-      <div id="reset" class="hidden">もう一度計算する？</div>
-    </div>
-  </div>
-  <script src="js/main.js"></script>
+<script type="text/javascript">
+  var Dentaku = document.dentaku;
+  var FlagNum = false;
+  function NumPress(Num) {
+    if (FlagNum) { 
+      Dentaku.readvalue.value = Num;
+      FlagNum = false;
+    }
+    else {
+      if (Dentaku.readvalue.value == "0") {
+        Dentaku.readvalue.value = Num;
+      } else {
+        Dentaku.readvalue.value += Num;
+      }
+    }
+  }  
+</script>
+  <form name="dentaku" action="">
   <table style="display:inline-block"> 
-    <tr><td><button><img src="img/1.jpg"></button></td><td><button><img src="img/2.jpg"></button></td><td><button><img src="img/3.jpg"></button></td></tr>
-    <tr><td><button><img src="img/4.jpg"></button></td><td><button><img src="img/5.jpg"></button></td><td><button><img src="img/6.jpg"></button></td></tr>
-    <tr><td><button><img src="img/7.jpg"></button></td><td><button><img src="img/8.jpg"></button></td><td><button><img src="img/9.jpg"></button></td></tr>
-    <tr><td><button><img src="img/0.jpg"></button></td><td><button><img src="img/DOT.jpg"></button></td><td><button><img src="img/=.jpg"></button></td></tr>
+    <tr style="margin-bottom:20px;"><td colspan="3"><input name="readvalue" type="text" size=15 value="0" style="height:25px;text-align:right;font-size:100%;"></td></tr>
+    <tr><td><input name="btnOne" type="button" value="  1  " onclick="NumPress(1)"></td><td><input type="image" src="img/2.jpg"></td><td><input type="image" src="img/3.jpg"></td></tr>
+    <tr><td><input type="image" src="img/4.jpg"></td><td><input type="image" src="img/5.jpg"></td><td><input type="image" src="img/6.jpg"></td></tr>
+    <tr><td><input type="image" src="img/7.jpg"></td><td><input type="image" src="img/8.jpg"></td><td><input type="image" src="img/9.jpg"></td></tr>
+    <tr><td><input type="image" src="img/0.jpg"></td><td><input type="image" src="img/DOT.jpg"></td><td><input type="image" src="img/=.jpg"></td></tr>
   </table>
   <table style="display:inline-block"> 
-    <tr><td></td><td><button><img src="img/0.jpg"></button></td><td><button><img src="img/0.jpg"></button></td></tr>
-    <tr><td></td><td><button><img src="img/0.jpg"></button></td><td><button><img src="img/AMARI.jpg"></button></td></tr>
-    <tr><td></td><td><button><img src="img/+.jpg"></button></td><td><button><img src="img/-.jpg"></button></td></tr>
-    <tr><td></td><td><button><img src="img/X.jpg"></button></td><td><button><img src="img/WARU.jpg"></button></td></tr>
+    <tr><td></td><td><input type="image" src="img/C.jpg"></td><td><input type="image" src="img/CE.jpg"></td></tr>
+    <tr><td></td><td><input type="image" src="img/+-.jpg"></td><td><input type="image" src="img/AMARI.jpg"></td></tr>
+    <tr><td></td><td><input type="image" src="img/+.jpg"></td><td><input type="image" src="img/-.jpg"></td></tr>
+    <tr><td></td><td><input type="image" src="img/X.jpg"></td><td><input type="image" src="img/WARU.jpg"></button></td></tr>
   </table>
+  </form>
 </body>
 </html>
