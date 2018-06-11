@@ -2,23 +2,10 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>割り勘電卓</title>
+  <title>電卓</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<script type="text/javascript">
-  function selectWarikan(){
-    document.getElementById('price').placeholder = "金額";
-    document.getElementById('num').placeholder = "人数";
-    document.getElementById('unit').style.visibility = "visible";
-  }
-</script>
-<script type="text/javascript">
-  function selectKyuyo(){
-    document.getElementById('price').placeholder = "時給";
-    document.getElementById('num').placeholder = "勤務時間";
-    document.getElementById('unit').style.visibility = "hidden";
-  }
-</script>
+
 <body>
   <div class="container">
     <div class="select-area">
@@ -26,13 +13,16 @@
       <input type="radio" id="kyuyo" name="dentaku" value="kyuyo" onclick="selectKyuyo()">給与計算
     </div>
     <div class="input-area">
-      <input type="text" id="price" placeholder="金額">
-      <input type="text" id="num" placeholder="人数">
-      <select id="unit">
-        <option value="10">10円単位</option>
-        <option value="100" selected>100円単位</option>
-        <option value="1000">1000円単位</option>
-      </select>
+      <input type="text" id="value1">
+      <input type="text" id="kigou">
+      <input type="text" id="value2">
+      <br>
+      <input type="radio" name="enzan" id="plus">+
+      <input type="radio" name="enzan" id="minus">-
+      <input type="radio" name="enzan" id="multiply">×
+      <input type="radio" name="enzan" id="divide">÷
+      <input type="radio" name="enzan" id="amari">あまり
+      <input type="radio" name="shosu" id="shosu">.
       <div id="btn" class="disabled">計算</div>
     </div>
     <div class="result-area">
@@ -41,5 +31,17 @@
     </div>
   </div>
   <script src="js/main.js"></script>
+  <table style="display:inline-block"> 
+    <tr><td><button><img src="img/1.jpg"></button></td><td><button><img src="img/2.jpg"></button></td><td><button><img src="img/3.jpg"></button></td></tr>
+    <tr><td><button><img src="img/4.jpg"></button></td><td><button><img src="img/5.jpg"></button></td><td><button><img src="img/6.jpg"></button></td></tr>
+    <tr><td><button><img src="img/7.jpg"></button></td><td><button><img src="img/8.jpg"></button></td><td><button><img src="img/9.jpg"></button></td></tr>
+    <tr><td><button><img src="img/0.jpg"></button></td><td><button><img src="img/DOT.jpg"></button></td><td><button><img src="img/=.jpg"></button></td></tr>
+  </table>
+  <table style="display:inline-block"> 
+    <tr><td></td><td><button><img src="img/0.jpg"></button></td><td><button><img src="img/0.jpg"></button></td></tr>
+    <tr><td></td><td><button><img src="img/0.jpg"></button></td><td><button><img src="img/AMARI.jpg"></button></td></tr>
+    <tr><td></td><td><button><img src="img/+.jpg"></button></td><td><button><img src="img/-.jpg"></button></td></tr>
+    <tr><td></td><td><button><img src="img/X.jpg"></button></td><td><button><img src="img/WARU.jpg"></button></td></tr>
+  </table>
 </body>
 </html>
