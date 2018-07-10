@@ -7,37 +7,21 @@
 </head>
 
 <body>
-<script type="text/javascript">
-  var Dentaku = document.dentaku;
-  var FlagNum = false;
-  function NumPress(Num) {
-    if (FlagNum) { 
-      Dentaku.readvalue.value = Num;
-      FlagNum = false;
-    }
-    else {
-      if (Dentaku.readvalue.value == "0") {
-        Dentaku.readvalue.value = Num;
-      } else {
-        Dentaku.readvalue.value += Num;
-      }
-    }
-  }  
-</script>
   <form name="dentaku" action="">
   <table style="display:inline-block"> 
-    <tr style="margin-bottom:20px;"><td colspan="3"><input name="readvalue" type="text" size=15 value="0" style="height:25px;text-align:right;font-size:100%;"></td></tr>
-    <tr><td><input name="btnOne" type="button" value="  1  " onclick="NumPress(1)"></td><td><input type="image" src="img/2.jpg"></td><td><input type="image" src="img/3.jpg"></td></tr>
-    <tr><td><input type="image" src="img/4.jpg"></td><td><input type="image" src="img/5.jpg"></td><td><input type="image" src="img/6.jpg"></td></tr>
-    <tr><td><input type="image" src="img/7.jpg"></td><td><input type="image" src="img/8.jpg"></td><td><input type="image" src="img/9.jpg"></td></tr>
-    <tr><td><input type="image" src="img/0.jpg"></td><td><input type="image" src="img/DOT.jpg"></td><td><input type="image" src="img/=.jpg"></td></tr>
+    <tr style="margin-bottom:20px;"><td colspan="3"><input name="readvalue" id="readvalue" type="text" size=15 value="0" style="height:25px;text-align:right;font-size:100%;"></td></tr>
+    <tr><td><a href="#"  onclick="NumPress(1);"><img src="img/1.jpg"></a></td><td><a href="#"  onclick="NumPress(2);"><img src="img/2.jpg"></a></td><td><a href="#"  onclick="NumPress(3);"><img src="img/3.jpg"></a></td></tr>
+    <tr><td><a href="#"  onclick="NumPress(4);"><img src="img/4.jpg"></a></td><td><a href="#"  onclick="NumPress(5);"><img src="img/5.jpg"></a></td><td><a href="#"  onclick="NumPress(6);"><img src="img/6.jpg"></a></td></tr>
+    <tr><td><a href="#"  onclick="NumPress(7);"><img src="img/7.jpg"></a></td><td><a href="#"  onclick="NumPress(8);"><img src="img/8.jpg"></a></td><td><a href="#"  onclick="NumPress(9);"><img src="img/9.jpg"></a></td></tr>
+    <tr><td><a href="#"  onclick="NumPress(0);"><img src="img/0.jpg"></a></td><td><a href="#"  onclick="Shosuten();"><img src="img/DOT.jpg"></a></td><td><a href="#"  onclick="Operation('=');"><img src="img/=.jpg"></a></td></tr>
   </table>
   <table style="display:inline-block"> 
-    <tr><td></td><td><input type="image" src="img/C.jpg"></td><td><input type="image" src="img/CE.jpg"></td></tr>
-    <tr><td></td><td><input type="image" src="img/+-.jpg"></td><td><input type="image" src="img/AMARI.jpg"></td></tr>
-    <tr><td></td><td><input type="image" src="img/+.jpg"></td><td><input type="image" src="img/-.jpg"></td></tr>
-    <tr><td></td><td><input type="image" src="img/X.jpg"></td><td><input type="image" src="img/WARU.jpg"></button></td></tr>
+    <tr><td></td><td><a href="#"  onclick="Clear();"><img src="img/C.jpg"></a></td><td><a href="#"  onclick="ClearEntry();"><img src="img/CE.jpg"></a></td><td><a href="#"  onclick="PlusMinus();"><img src="img/+-.jpg"></a></td></tr>
+    <tr><td></td><td><a href="#"  onclick="Operation('%');"><img src="img/AMARI.jpg"></a></td><td><a href="#"  onclick="Percent();"><img src="img/Percent.jpg"></a></td><td></td></tr>
+    <tr><td></td><td><a href="#"  onclick="Operation('+');"><img src="img/+.jpg"></a></td><td><a href="#"  onclick="Operation('-');"><img src="img/-.jpg"></a></td><td></td></tr>
+    <tr><td></td><td><a href="#"  onclick="Operation('*');"><img src="img/X.jpg"></a></td><td><a href="#"  onclick="Operation('/');"><img src="img/WARU.jpg"></a></td><td></td></tr>
   </table>
   </form>
+<script src="js/main.js"></script>
 </body>
 </html>
