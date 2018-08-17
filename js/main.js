@@ -39,6 +39,10 @@ function Operation (Op) {
     }
 }
 
+function PlusMinus () {
+  Dentaku.readvalue.value = parseFloat(Dentaku.readvalue.value) * -1;
+}
+
 function Shosuten () {
   var nowReadOut = Dentaku.readvalue.value;
   if (FlagNum) {
@@ -60,10 +64,6 @@ function Clear () {
   Accumulation = 0;
   Enzan = "";
   ClearEntry();
-}
-
-function PlusMinus () {
-  Dentaku.readvalue.value = parseFloat(Dentaku.readvalue.value) * -1;
 }
 
 function Percent () {
